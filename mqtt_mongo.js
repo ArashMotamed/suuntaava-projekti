@@ -30,15 +30,6 @@ const client = new MongoClient(uri, {
   }
 });
 
-// Lisää tämä MongoClient-instanssin jälkeen, ennen kuin käytät client.db()
-client.connect((err) => {
-  if (err) {
-    console.error("Failed to connect to MongoDB:", err);
-  } else {
-    console.log("Connected to MongoDB");
-  }
-});
-
 //määritellään tietokannan ja kokoelman nimi sekä dataobjekti sensoridatan käsittelyyn
 const myDB = client.db("sensordata2");
 const myColl = myDB.collection("sensordata2");
